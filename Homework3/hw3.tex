@@ -1,0 +1,100 @@
+\documentclass[12pt]{article}%
+\usepackage{amsfonts}
+\usepackage{fancyhdr}
+\usepackage{comment}
+\usepackage[a4paper, top=2.5cm, bottom=2.5cm, left=2.2cm, right=2.2cm]%
+{geometry}
+\usepackage{times}
+\usepackage{amsmath}
+\usepackage{changepage}
+\usepackage{stfloats}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{indentfirst}
+\setlength{\parindent}{2em}
+\setcounter{MaxMatrixCols}{30}
+\newtheorem{theorem}{Theorem}
+\newtheorem{acknowledgement}[theorem]{Acknowledgement}
+\newtheorem{algorithm}[theorem]{Algorithm}
+\newtheorem{axiom}{Axiom}
+\newtheorem{case}[theorem]{Case}
+\newtheorem{claim}[theorem]{Claim}
+\newtheorem{conclusion}[theorem]{Conclusion}
+\newtheorem{condition}[theorem]{Condition}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{criterion}[theorem]{Criterion}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{exercise}[theorem]{Exercise}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{notation}[theorem]{Notation}
+\newtheorem{problem}[theorem]{Problem}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{solution}[theorem]{Solution}
+\newtheorem{summary}[theorem]{Summary}
+\newenvironment{proof}[1][Proof]{\textbf{#1.} }{\ \rule{0.5em}{0.5em}}
+
+\usepackage{mathtools}
+
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\Z}{\mathbb{Z}}
+
+\begin{document}
+
+\title{MATH2050 HW3}
+\author{ZHENG Weijia William, 1155124322}
+\date{Spring, 2020}
+\maketitle
+
+\section{P69 Q9}
+We claim that the limit of $(\sqrt{n}y_n)$ is $\frac{1}{2}$. Following is to prove the claim. 
+
+Note that $y_n=\sqrt{n+1}-\sqrt{n}=\frac{1}{\sqrt{n+1}+\sqrt{n}}.$
+
+$$\therefore \forall \epsilon >0, |\sqrt{n}y_n-\frac{1}{2}|=|\frac{\sqrt{n}}{\sqrt{n+1}+\sqrt{n}}-\frac{1}{2}|=\frac{1}{2}\frac{\sqrt{n+1}-\sqrt{n}}{\sqrt{n+1}+\sqrt{n}}=\frac{1}{2}\frac{1}{(\sqrt{n+1}+\sqrt{n})^2}.$$
+
+$$\therefore \forall \epsilon >0, |\sqrt{n}y_n-\frac{1}{2}|<\frac{1}{2}\frac{1}{(2\sqrt{n})^2}=\frac{1}{8n}.$$
+
+So, $\forall \epsilon >0, \forall n>N>\frac{1}{8\epsilon},$ we have $|\sqrt{n}y_n-\frac{1}{2}|<\epsilon.$
+
+Hence, we proved that $(\sqrt{n}y_n)$ is convergent and the limit is $\frac{1}{2}.$
+
+~\
+
+\section{P69 Q20}
+(i) As $L:=\lim_{n \to \infty}(x_n^{1/n})<1,$ we have $$\forall \epsilon >0, \exists N~s.t.~\forall n>N, |x_n^{1/n}-L|<\epsilon.$$
+
+That is to say, $\forall n>N,$ $L-\epsilon<x_n^{1/n}<L+\epsilon.$ 
+
+Take $\epsilon = \frac{1-L}{2},$ and notice that $(x_n)$ is a positive real sequence, we have $$0<x_n<(L+\frac{1-L}{2})^n=(\frac{1+L}{2})^n,~\forall n>N.$$ 
+
+So there exists a real number $r=\frac{1+L}{2}$ such that $x_n \in (0,r^n), \forall n>N.$
+
+~\
+
+(ii) Consider $r=\frac{1+L}{2}$, and from (i), we have $0<x_n<r^n.$
+
+Note that $\forall \epsilon>0, \forall n > N_1 = \frac{\ln \epsilon}{\ln r}, r^n<\epsilon.$ Therefore $\lim_{n \to \infty}r^n = 0.$
+
+Hence, $$0\leq \lim_{n \to \infty}x_n\leq \lim_{n \to \infty}r^n=0.$$ 
+
+Which deduces $$\lim_{n \to \infty}x_n=0.$$
+
+~\
+
+\section{P69 Q22}
+Of course $(x_n)$ is convergent.
+
+Denote the limit of $(x_n)$ to be $L.$ Note that $\forall \epsilon>0$ we have an $N_1$ s.t.$\forall n>N_1$, $$|x_n-L|<\frac{\epsilon}{2}.$$ 
+
+From the question, we have $\forall \epsilon>0,\exists M$ s.t. $\forall n>M,$ $$|x_n-y_n|<\frac{\epsilon}{2}.$$
+
+Note that $\forall n>\max{N_1,M}$, $$|y_n-L|<|y_n-x_n|+|x_n-L|<\frac{\epsilon}{2}+\frac{\epsilon}{2}=\epsilon.$$
+
+Hence we proved that $(y_n)$ is convergent, and further, its limit is the same as $x_n$'s. 
+
+\end{document}

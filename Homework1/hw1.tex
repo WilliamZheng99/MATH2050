@@ -1,0 +1,133 @@
+\documentclass[12pt]{article}%
+\usepackage{amsfonts}
+\usepackage{fancyhdr}
+\usepackage{comment}
+\usepackage[a4paper, top=2.5cm, bottom=2.5cm, left=2.2cm, right=2.2cm]%
+{geometry}
+\usepackage{times}
+\usepackage{amsmath}
+\usepackage{changepage}
+\usepackage{stfloats}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{indentfirst}
+\setlength{\parindent}{2em}
+\setcounter{MaxMatrixCols}{30}
+\newtheorem{theorem}{Theorem}
+\newtheorem{acknowledgement}[theorem]{Acknowledgement}
+\newtheorem{algorithm}[theorem]{Algorithm}
+\newtheorem{axiom}{Axiom}
+\newtheorem{case}[theorem]{Case}
+\newtheorem{claim}[theorem]{Claim}
+\newtheorem{conclusion}[theorem]{Conclusion}
+\newtheorem{condition}[theorem]{Condition}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{criterion}[theorem]{Criterion}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{exercise}[theorem]{Exercise}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{notation}[theorem]{Notation}
+\newtheorem{problem}[theorem]{Problem}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{solution}[theorem]{Solution}
+\newtheorem{summary}[theorem]{Summary}
+\newenvironment{proof}[1][Proof]{\textbf{#1.} }{\ \rule{0.5em}{0.5em}}
+
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\Z}{\mathbb{Z}}
+
+\begin{document}
+
+\title{MATH2050A HW1}
+\author{ZHENG Weijia William, 1155124322}
+\date{2020 Spring}
+\maketitle
+
+\section{Q4 (Section 2.3)}
+
+Note that $n$ appears in the denominator, so $n \neq 0$. Hence $n \in \mathbb{N}^*$.
+
+If $n$ is odd, $1-\frac{(-1)^n}{n}=1+\frac{1}{n}$, and if $n$ is even, $1-\frac{(-1)^n}{n}=1-\frac{1}{n}$. 
+
+So we can write $S_4 = S_{41} \cup S_{42}$, where $S_{41}=\{1+\frac{1}{n}| n=2k+1, k \in \mathbb{N}\}$ and $S_{42}=\{1-\frac{1}{n}| n=2k, k \in \mathbb{N}^*\}$. 
+
+~\
+
+We claim that  $2=\sup{S_4}$. 
+
+(i) Note that $S_4 =S_{41} \cup S_{42} $. 
+
+$\forall x \in S_{42}$, by definition, $x \leq 1 < 2$, hence $x \leq 2$. 
+
+$\forall x \in S_{41}$, there exists $m \in \mathbb{N}$ and $m$ is odd s.t. $x=1+\frac{1}{m}$. Note that $x \leq 2$ is equivalent to $1\leq m$, which is true trivially. 
+
+So, $\forall x \in S_{4}, x \leq 2$. Hence 2 is an upper bound of $S_4$. 
+
+~\
+
+(ii)Note that $1-\frac{(-1)^n}{n}=1+\frac{1}{n}=2$ when $n=1$, so $2\in S_4$. $\forall L$ is an upper bound of $S_4$, $2 \leq L$ holds for sure, because 2 itself is an element in $S_4$. So 2 is the smallest upper bound of $S_4$. 
+
+So, by (i) and (ii), we have $2 = \sup{S_4}$. 
+
+~\
+
+We claim that $\frac{1}{2}=\inf{S_4}$. 
+
+(iii) Note that $S_4 =S_{41} \cup S_{42} $. 
+
+$\forall x \in S_{41}$, by definition, $x \geq 1 > \frac{1}{2}$, hence $x \geq \frac{1}{2}$. 
+
+$\forall x \in S_{42}$, there exists $m \in \mathbb{N}^*$ and $m$ is even s.t. $x=1-\frac{1}{m}$. Note that $x \geq \frac{1}{2}$ is equivalent to $1-\frac{1}{m} \geq \frac{1}{2}$ ,i.e. $m \geq 2$, which is true trivially. 
+
+So, $\forall x \in S_{4}, x \geq \frac{1}{2}$. Hence $\frac{1}{2}$ is an lower bound of $S_4$. 
+
+~\
+
+(iv) Suppose $l$ is a lower bound of $S_4$. Note that $1-\frac{(-1)^n}{n}=\frac{1}{2}$ when $n=2$. Hence $\frac{1}{2} \in S_4$. 
+
+Because $l$ is lower bound of $S_4$ as supposed, $l \leq \frac{1}{2}$. 
+
+So by (iii) and (iv), $\frac{1}{2}$ is the greatest lower bound of $S_4$. And we have $\frac{1}{2}=\inf{S_4}$. 
+
+
+\section{Q10 (Section 2.3)}
+
+If $A$ and $B$ are bounded, $\forall x \in A, a1 \leq x \leq a2$. $\forall y \in B, b1 \leq y \leq b2$. 
+
+$\therefore \forall z \in A \cup B, \min\{a1,b1\} \leq z \leq \max\{a2,b2\}$, which implies $ A \cup B$ is bounded.
+
+~\
+
+Note that the R.H.S. of the equation, $\sup\{\sup{A},\sup{B}\}=\max\{\sup{A},\sup{B}\}$. 
+
+Denote $\sup\{A \cup B\} = L$. $\forall x \in A \cup B, x \leq L$. Hence $\forall x \in A, x \leq L$, $L$ is an upper bound of $A$. 
+
+Hence $L=\sup\{A \cup B\} \geq \sup{A}$. For the same reasoning, $L=\sup\{A \cup B\} \geq \sup{B}$. 
+$$\therefore \sup\{A \cup B\} \geq \max\{\sup{A},\sup{B}\}=\sup\{\sup{A},\sup{B}\}$$
+
+Since $\sup{A}$ and $\sup{B}$ are two numbers, we consider the situation that $\sup{A} \geq \sup{B}$. Then $\sup\{\sup{A},\sup{B}\}=\sup{A}$. 
+
+$\forall x \in A \cup B$, if $x \in A$, by definition, $x \leq \sup{A}$, if $x \in B$, by definition, $x \leq \sup{B} \leq \sup{A}$. So $\forall x \in A \cup B$, $x \leq \sup{A}$. 
+
+So $\sup{A}$ is an upper bound of $A \cup B$, hence $$\sup\{\sup{A},\sup{B}\}=\sup(A) \geq \sup\{A \cup B\}.$$ And when $\sup{A} \leq \sup{B}$, $$\sup\{\sup{A},\sup{B}\}=\sup(B) \geq \sup\{A \cup B\}.$$
+
+Combining all above, we have the desired equation proved, which is $$\sup\{\sup{A},\sup{B}\}=\sup\{A \cup B\}.$$
+
+
+\section{Q12 (Section 2.3)}
+
+From Q10 we know that $\sup\{\sup{A},\sup{B}\}=\sup\{A \cup B\}.$
+
+So, under the given situation, we have $$\sup\{\sup{S},\sup\{u\}\}=\sup\{S \cup \{u\}\}.$$
+
+Note that $\{u\}$ is a one-element-set, $\sup{\{u\}}=u$. Because $u \leq u$ (u is upper bound). And $\forall$ upper bound $L$ of $\{u\}$, $u \leq L$, for $u$ itself is inside the set $\{u\}$.
+
+Also the question gives us $s^* = \sup{S}$, plug this and $\sup{\{u\}}=u$ into the above equation, we have $$\sup\{s^*,u\}=\sup\{S \cup \{u\}\}.$$
+
+
+\end{document}

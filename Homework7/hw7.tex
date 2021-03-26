@@ -1,0 +1,103 @@
+\documentclass[12pt]{article}%
+\usepackage{amsfonts}
+\usepackage{fancyhdr}
+\usepackage{comment}
+\usepackage[a4paper, top=2.5cm, bottom=2.5cm, left=2.2cm, right=2.2cm]%
+{geometry}
+\usepackage{times}
+\usepackage{amsmath}
+\usepackage{changepage}
+\usepackage{stfloats}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{indentfirst}
+\setlength{\parindent}{2em}
+\setcounter{MaxMatrixCols}{30}
+\newtheorem{theorem}{Theorem}
+\newtheorem{acknowledgement}[theorem]{Acknowledgement}
+\newtheorem{algorithm}[theorem]{Algorithm}
+\newtheorem{axiom}{Axiom}
+\newtheorem{case}[theorem]{Case}
+\newtheorem{claim}[theorem]{Claim}
+\newtheorem{conclusion}[theorem]{Conclusion}
+\newtheorem{condition}[theorem]{Condition}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{criterion}[theorem]{Criterion}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{exercise}[theorem]{Exercise}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{notation}[theorem]{Notation}
+\newtheorem{problem}[theorem]{Problem}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{solution}[theorem]{Solution}
+\newtheorem{summary}[theorem]{Summary}
+\newenvironment{proof}[1][Proof]{\textbf{#1.} }{\ \rule{0.5em}{0.5em}}
+
+\usepackage{mathtools}
+
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\Z}{\mathbb{Z}}
+
+\begin{document}
+
+\title{MATH2050A Homework 7}
+\author{ZHENG Weijia William, 1155124322}
+\date{Spring, 2020}
+\maketitle
+
+
+\section{Q7 P134}
+Let $f:[0,1] \to \mathbb{R}$ be $\forall x\in [0,1]$:
+
+$$f(x)=\left\{
+\begin{aligned}
+1 &,~ x\in \mathbb{Q}\\
+-1 &, ~x\not\in \mathbb{Q} \\
+\end{aligned}
+\right.$$
+
+Note that $\forall x\in \mathbb{Q},$ we can find a sequence $(x_n)$ s.t. $\lim_{n \to \infty}x_n = x$ and $x_n \not\in \mathbb{Q}$, which implies $$\lim_{n \to \infty}f(x_n)=-1<f(x)=1.$$ 
+
+Hence $\forall x\in \mathbb{Q},$ f is discontinuous. Also note that $\forall x\not\in \mathbb{Q},$ we can find a sequence $(x_n)$ s.t. $\lim_{n \to \infty}x_n = x$ and $x_n \in \mathbb{Q}$, which implies $$\lim_{n \to \infty}f(x_n)=1>f(x)=-1.$$ 
+
+Therefore $\forall x\not\in \mathbb{Q},$ f is discontinuous.
+
+Consider $|f|$, which is $|f(x)|=1, \forall x\in [0,1].$ So $|f|$ is constant on its domain and continuous. 
+
+
+\section{Q15 P134}
+According to the definition, $h(x)=\sup\{f(x),g(x)\}.$
+
+$\forall x\in \mathbb{R},$ if $f(x)\leq g(x)$, then $h(x)=\sup\{f(x),g(x)\}=g(x).$
+
+Note that $\frac{1}{2}(h(x)+g(x))+\frac{1}{2}|f(x)-g(x)|=\frac{1}{2}(f(x)+g(x))+\frac{1}{2}(g(x)-f(x))=g(x).$
+
+Hence $h(x)=\frac{1}{2}(h(x)+g(x))+\frac{1}{2}|f(x)-g(x)|, \forall x \in \{x\in \mathbb{R}: f(x)\leq g(x)\}$
+
+~
+
+If $f(x)>g(x)$, then $h(x)=\sup\{f(x),g(x)\}=f(x).$ 
+Note that $\frac{1}{2}(h(x)+g(x))+\frac{1}{2}|f(x)-g(x)|=\frac{1}{2}(f(x)+g(x))+\frac{1}{2}(f(x)-g(x))=f(x).$
+
+Hence $h(x)=\frac{1}{2}(h(x)+g(x))+\frac{1}{2}|f(x)-g(x)|, \forall x \in \{x\in \mathbb{R}: f(x)>g(x)\}$
+
+~
+
+So, $h(x)=\frac{1}{2}(h(x)+g(x))+\frac{1}{2}|f(x)-g(x)|, \forall x \in \mathbb{R}.$ Then (i) is proved. 
+
+
+~
+
+Note that by the question, $f(x)$ and $g(x)$ are both continuous at $c$, hence $f(x)-g(x)$ is continuous at $c$. 
+
+Therefore $|f(x)-g(x)|$ is continuous at $c$. Then $h(x)=\frac{1}{2}(h(x)+g(x))+\frac{1}{2}|f(x)-g(x)|, \forall x \in \mathbb{R}$ is continuous at $c$. So (ii) is proved. 
+
+
+
+
+\end{document}

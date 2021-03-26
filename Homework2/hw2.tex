@@ -1,0 +1,105 @@
+\documentclass[12pt]{article}%
+\usepackage{amsfonts}
+\usepackage{fancyhdr}
+\usepackage{comment}
+\usepackage[a4paper, top=2.5cm, bottom=2.5cm, left=2.2cm, right=2.2cm]%
+{geometry}
+\usepackage{times}
+\usepackage{amsmath}
+\usepackage{changepage}
+\usepackage{stfloats}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{indentfirst}
+\setlength{\parindent}{2em}
+\setcounter{MaxMatrixCols}{30}
+\newtheorem{theorem}{Theorem}
+\newtheorem{acknowledgement}[theorem]{Acknowledgement}
+\newtheorem{algorithm}[theorem]{Algorithm}
+\newtheorem{axiom}{Axiom}
+\newtheorem{case}[theorem]{Case}
+\newtheorem{claim}[theorem]{Claim}
+\newtheorem{conclusion}[theorem]{Conclusion}
+\newtheorem{condition}[theorem]{Condition}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{criterion}[theorem]{Criterion}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{exercise}[theorem]{Exercise}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{notation}[theorem]{Notation}
+\newtheorem{problem}[theorem]{Problem}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{solution}[theorem]{Solution}
+\newtheorem{summary}[theorem]{Summary}
+\newenvironment{proof}[1][Proof]{\textbf{#1.} }{\ \rule{0.5em}{0.5em}}
+
+\usepackage{mathtools}
+
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\Z}{\mathbb{Z}}
+
+\begin{document}
+
+\title{MATH2050A HW2}
+\author{ZHENG Weijia William, 1155124322}
+\date{Spring, 2020}
+\maketitle
+
+\section{Q5 (Section 3.1)}
+
+(i) 
+
+$\forall \epsilon>0$,$\forall n>N = \lceil{\frac{1}{\epsilon}}\rceil$, we have $$|\frac{n}{n^2+1}-0|<|\frac{n}{n^2}|=\frac{1}{n}<\epsilon.$$ which implies that $\lim_{n \to \infty} \frac{n}{n^2+1}=0 .$
+
+~\
+
+(ii) 
+
+$\forall \epsilon >0$, $\forall n>N = \lceil{\frac{2}{\epsilon}}\rceil$, we have $$|\frac{2n}{n+1}-2|=|\frac{2}{n+1}|<\frac{2}{n}<\epsilon.$$Which implies that $\lim_{n \to \infty} \frac{2n}{n+1}=2 .$
+
+~\
+
+(iii) 
+
+$\forall \epsilon >0$, $\forall n>N = \lceil{\frac{13}{4\epsilon}}\rceil$, we have $$|\frac{3n+1}{2n+5}-\frac{3}{2}|=|\frac{-6.5}{2n+5}|<\frac{13}{4n}<\epsilon.$$ Which implies that $\lim_{n \to \infty} \frac{3n+1}{2n+5}=\frac{3}{2} .$
+
+~\
+
+(iv) 
+
+$\forall \epsilon >0$, $\forall n>N = \lceil{\sqrt{\frac{5}{4\epsilon}}}\rceil$, we have $$|\frac{n^2-1}{2n^2+3}-\frac{1}{2}|=|\frac{5}{4n^2+6}|<\frac{5}{4n^2}<\epsilon.$$ Which implies that $\lim_{n \to \infty} \frac{n^2-1}{2n^2+3}=\frac{1}{2} .$
+
+\section{Q8 (Section 3.1)}
+
+First we need to prove that $$\lim_{n \to \infty} (x_n) =0 \iff \lim_{n \to \infty} (|x_n|) =0$$
+
+Suppose $\lim_{n \to \infty} (x_n) =0$, by definition, we have $$\forall \epsilon>0, \exists N \in \mathbb{N} ~s.t.~ |x_n|<\epsilon, \forall n>N.$$ So, $|x_n|=||x_n|-0|<\epsilon.$ Hence we have $$\forall \epsilon>0, \exists N \in \mathbb{N} ~s.t.~ ||x_n|-0|<\epsilon, \forall n>N$$ which implies $\lim_{n \to \infty} (|x_n|) =0$
+
+~\
+
+Suppose $\lim_{n \to \infty} (|x_n|) =0$, by definition, we have $$\forall \epsilon>0, \exists N \in \mathbb{N} ~s.t.~ ||x_n|-0|<\epsilon, \forall n>N,$$ note that $||x_n|-0|<\epsilon$ implies $|x_n|<\epsilon$, so $$\forall \epsilon>0, \exists N \in \mathbb{N} ~s.t.~ |x_n|<\epsilon, \forall n>N$$ also holds. Which is just implies $\lim_{n \to \infty} (x_n) =0$. So from all above, we have $$\lim_{n \to \infty} (x_n) =0 \iff \lim_{n \to \infty} (|x_n|) =0.$$
+
+~\
+
+Let $x_n = (-1)^{(n+1)}, n \in \mathbb{N}.$ Note that the $|x_n|=1, \forall n.$ So $\lim_{n \to \infty}|x_n|$ exists. 
+
+Note that $\{x_n\}=\{-1,1\}.$ Suppose $x_n$'s limit is $L$, then $\forall \epsilon>0$ there exists an $N \in \mathbb{N}$ s.t. $|x_n-L|<\epsilon, \forall n>N.$
+
+Consider when $n>N$ and $n$ are even numbers, $x_n=-1$, we have $|-1-L|=|L-(-1)|<\epsilon.$
+
+Consider when $n>N$ and $n$ are odd numbers, $x_n=1$, we have $|1-L|=|L-1|<\epsilon.$
+
+Since the $\epsilon$ can be picked as any positive number, we choose it to be $\frac{1}{4}.$
+
+We have $L \in (-\frac{5}{4},-\frac{3}{4})$ and $L \in (\frac{3}{4},\frac{5}{4}).$ The two sets are disjoint, so such $L$ does not exist. So $\lim_{n \to \infty}x_n$ doesn't exist.
+
+So we have an example showing that the convergence of $(|x_n|)$ need not imply the convergence of $(x_n).$
+
+
+
+\end{document}

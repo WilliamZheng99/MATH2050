@@ -1,0 +1,85 @@
+\documentclass[12pt]{article}%
+\usepackage{amsfonts}
+\usepackage{fancyhdr}
+\usepackage{comment}
+\usepackage[a4paper, top=2.5cm, bottom=2.5cm, left=2.2cm, right=2.2cm]%
+{geometry}
+\usepackage{times}
+\usepackage{amsmath}
+\usepackage{changepage}
+\usepackage{stfloats}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{indentfirst}
+\setlength{\parindent}{2em}
+\setcounter{MaxMatrixCols}{30}
+\newtheorem{theorem}{Theorem}
+\newtheorem{acknowledgement}[theorem]{Acknowledgement}
+\newtheorem{algorithm}[theorem]{Algorithm}
+\newtheorem{axiom}{Axiom}
+\newtheorem{case}[theorem]{Case}
+\newtheorem{claim}[theorem]{Claim}
+\newtheorem{conclusion}[theorem]{Conclusion}
+\newtheorem{condition}[theorem]{Condition}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{criterion}[theorem]{Criterion}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{exercise}[theorem]{Exercise}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{notation}[theorem]{Notation}
+\newtheorem{problem}[theorem]{Problem}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{solution}[theorem]{Solution}
+\newtheorem{summary}[theorem]{Summary}
+\newenvironment{proof}[1][Proof]{\textbf{#1.} }{\ \rule{0.5em}{0.5em}}
+
+\usepackage{mathtools}
+
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\Z}{\mathbb{Z}}
+
+\begin{document}
+
+\title{MATH2050A Homework 9}
+\author{William Zheng}
+\date{Spring, 2020}
+\maketitle
+
+
+\section{Q8 P148}
+Note that $f(x)$ is uniformly continuous on $\mathbb{R}$, i.e., $\forall \epsilon_1>0,$ 
+
+$\exists \delta_1>0$ s.t. $\forall x_1,x_2\in \mathbb{R}, |x_1-x_2|<\delta_1,$ we have $$|f(x_1)-f(x_2)|<\epsilon_1.$$ 
+
+And since $g(x)$ is also uniformly continuous on $\mathbb{R}$, $\forall \epsilon_2>0, \exists \delta_2>0$ s.t. $\forall x_1,x_2\in \mathbb{R}, |x_1-x_2|<\delta_2,$ we have $$|g(x_1)-g(x_2)|<\epsilon_2.$$ 
+
+Take $\epsilon_2 = \delta_1>0.$ We have some $\delta_2>0$ s.t. $\forall x_1,x_2\in \mathbb{R}, |x_1-x_2|<\delta_2,$ we have $$|g(x_1)-g(x_2)|<\delta_1.$$ 
+
+Note that $g(x_1),g(x_2) \in \mathbb{R}.$ Then by the previous part we wrote at the beginning of the proof, $$ |f(g(x_1))-f(g(x_2))|<\epsilon_1.$$
+
+Hence, by the definition of uniformly continuous, $f(g(x))$ is uniformly continuous on $\mathbb{R}$.
+
+
+~\
+
+\section{Q10 P148}
+
+Note that $f(x)$ is uniformly continuous, then $\forall \epsilon>0, \exists \delta>0$ s.t. $\forall x_1,x_2\in A, |x_1-x_2|<\delta,$ we have $$|f(x_1)-f(x_2)|<\epsilon.$$
+
+Let $\epsilon=1$ and then fix a corresponding $\delta.$
+
+Note that A is bounded. Hence A can be covered by a union of multiple open intervals, i.e., $\exists X_1,x_2,...,x_n \in A, B_1=(x_1-\delta, x_1+\delta), B_2=(x_2-\delta, x_2+\delta),...B_n=(x_n-\delta, x_n+\delta)$ s.t. $$A \subset B_1 \cup B_2 \cup ...\cup B_n.$$
+
+$\forall x\in A$, $\exists m$ s.t. $x \in B_m.$ Because $B_m=(x_m-\delta, x_m+\delta)$, then $|x-x_m|<\delta$, which implies $$|f(x)-f(x_m)|<1.$$
+
+Then $f(x)<f(x_m)+1$, $f(x)>f(x_m)-1$, which implies $\forall x\in A,$ $$f(x)<\sup\{f(x_1)+1,...f(x_n)+1\}=U$$ and $$f(x)>\inf\{f(x_1)-1,...f(x_n)-1\}=L.$$
+
+Hence, $f$ is bounded on A. 
+
+
+\end{document}

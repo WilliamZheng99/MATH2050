@@ -1,0 +1,113 @@
+\documentclass[12pt]{article}%
+\usepackage{amsfonts}
+\usepackage{fancyhdr}
+\usepackage{comment}
+\usepackage[a4paper, top=2.5cm, bottom=2.5cm, left=2.2cm, right=2.2cm]%
+{geometry}
+\usepackage{times}
+\usepackage{amsmath}
+\usepackage{changepage}
+\usepackage{stfloats}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{indentfirst}
+\setlength{\parindent}{2em}
+\setcounter{MaxMatrixCols}{30}
+\newtheorem{theorem}{Theorem}
+\newtheorem{acknowledgement}[theorem]{Acknowledgement}
+\newtheorem{algorithm}[theorem]{Algorithm}
+\newtheorem{axiom}{Axiom}
+\newtheorem{case}[theorem]{Case}
+\newtheorem{claim}[theorem]{Claim}
+\newtheorem{conclusion}[theorem]{Conclusion}
+\newtheorem{condition}[theorem]{Condition}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{criterion}[theorem]{Criterion}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{exercise}[theorem]{Exercise}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{notation}[theorem]{Notation}
+\newtheorem{problem}[theorem]{Problem}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{solution}[theorem]{Solution}
+\newtheorem{summary}[theorem]{Summary}
+\newenvironment{proof}[1][Proof]{\textbf{#1.} }{\ \rule{0.5em}{0.5em}}
+
+\usepackage{mathtools}
+
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\Z}{\mathbb{Z}}
+
+\begin{document}
+
+\title{MATH2050A Homework 6}
+\author{ZHENG Weijia William, 1155124322}
+\date{Spring, 2020}
+\maketitle
+
+\section{Q10 (Section 5.1)}
+Let $\epsilon>0$. $\forall x_0 \in \mathbb{R},$
+
+If $x_0>0$, take $\delta_1 = \inf{\{\frac{x_0}{2},\epsilon\}}.$ We have $$|f(x)-f(x_0)| = |x-x_0|<\epsilon,~~ \forall x:|x-x_0|<\delta_1.$$
+
+If $x_0<0$, take $\delta_2 = \inf{ \{ \epsilon, \frac{-x_0}{2}  \} }$. We have $$|f(x)-f(x_0)| = ||x|-|x_0||=|-x+x_0|<\epsilon, ~~\forall x: |x-x_0|<\delta_2.$$
+
+If $x_0=0$, take $\delta_3 = \epsilon.$ We have $$|f(x)-f(x_0)|=|f(x)|=|x|<\epsilon, ~~\forall x:|x-x_0|<\delta_3.$$
+
+Base on all above, we have $\forall x_0 \in \mathbb{R}, \forall \epsilon>0,$ take $\delta=\inf{\{\delta_1,\delta_2, \delta_3\}}$, we have $$|f(x)-f(x_0)|<\epsilon,~~\forall x: |x-x_0|<\delta.$$
+
+Hence, the absolute value function is continuous at every point $x_0 \in \mathbb{R}.$
+~\
+
+\section{Q4a (Section 5.1)}
+Let $x_0\in \mathbb{R}.$ 
+
+\subsection{Case 1: $x_0 \in \mathbb{Z}$}
+
+If $x_0\in \mathbb{Z}.$ Then $f(x_0)=x_0$ itself. Take $\epsilon=0.5.$ $\forall \delta>0$, take $x = x_0+\frac{\delta}{2}$ we have $x > x_0, x_0\in \mathbb{Z}$, hence $f(x) \geq x_0+1 > f(x_0)=x_0.$ Therefore, we have $$f(x)-f(x_0)\geq 1, |f(x)-f(x_0)|\geq 1>\epsilon.$$
+
+\subsection{Case 2: $x_0 \not\in \mathbb{Z}$, $x_0>0$}
+
+If $x_0>0$, we know that by Archimedean's Property, $\exists n \in \mathbb{N}$ s.t. $$0<x_0<n.$$
+
+Define $N=\inf\{n \in \mathbb{N}: x_0<n\}.$ As the set is a subset of natural number, by the well-ordering principle, the definition is valid. 
+
+Note that $x_0>N-1.$ (Suppose not, $N-1$ wil be the inf of $\inf\{n \in \mathbb{N}: x_0<n\}$) Hence $N-1<x_0<N.$ 
+
+Let $\epsilon >0.$ Take $\delta = \inf\{\frac{|N-1-x_0|}{2},\frac{|N-x_0|}{2}\}$, $\forall x:|x-x_0|<\delta,$ which implies $N-1<x<N$, we have $$|f(x)-f(x_0)|=|N-1-(N-1)|=0<\epsilon.$$ 
+
+Therefore $f(x)$ is continuous on $x_0>0$ with $x_0 \in \mathbb{R}$ and $x_0 \not\in \mathbb{Z}$
+
+\subsection{Case 3: $x_0 \not\in \mathbb{Z}$, $x_0<0$}
+Consider $-x_0$, then -$x_0>0$ and we can apply the argument of case 2. So $\exists N \in \mathbb{N}$ s.t. $$N-1<-x_0<N.$$ which implies $$-N<x_0<-N+1.$$ Then $\forall \epsilon>0$, $\forall x:|x-x_0|<\delta$, where $\delta=\inf\{\frac{|-N-x_0|}{2},\frac{|-N+1-x_0|}{2}\}$ $$|f(x)-f(x_0)|=|-N-(-N)|=0<\epsilon.$$
+
+~\
+
+Hence the point of continuity of $f(x)$ is $\{ x \in \mathbb{R}: x \not\in \mathbb{Z}\}.$
+
+\section{Q9 (Section 4.3)}
+Let $g(x)=xf(x).$ So we have $\lim_{x \to \infty}g(x)=L.$ Define $h:(0,\infty) \to \mathbb{R}$ with $h(x)=\frac{1}{x}$. We have $\lim_{x \to \infty}h(x)=0.$ 
+
+Note that $f(x)=g(x)\cdot h(x), \forall x\in (0,\infty).$ Hence $$\lim_{x \to \infty}f(x)=L\cdot 0=0.$$
+
+
+\section{Q13 (Section 4.3)}
+Let $\epsilon>0.$
+
+By $\lim_{x \to \infty}f(x)=L.$ $\exists N$ s.t. $\forall x>N, |f(x)-L|<\epsilon.$
+
+And by $\lim_{x \to \infty}g(x)=\infty.$ There exists such $K$ s.t. $\forall x>K$,$$ g(x)>N.$$
+
+Therefore $\forall \epsilon>0,$ there exists $K$ such that $\forall x>K$, hence $g(x)>N$, we have $$|f(g(x))-L|<\epsilon.$$
+
+Which implies $\lim_{x \to \infty}f\circ g=L.$
+
+
+
+
+\end{document}

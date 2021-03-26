@@ -1,0 +1,119 @@
+\documentclass[12pt]{article}%
+\usepackage{amsfonts}
+\usepackage{fancyhdr}
+\usepackage{comment}
+\usepackage[a4paper, top=2.5cm, bottom=2.5cm, left=2.2cm, right=2.2cm]%
+{geometry}
+\usepackage{times}
+\usepackage{amsmath}
+\usepackage{changepage}
+\usepackage{stfloats}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{indentfirst}
+\setlength{\parindent}{2em}
+\setcounter{MaxMatrixCols}{30}
+\newtheorem{theorem}{Theorem}
+\newtheorem{acknowledgement}[theorem]{Acknowledgement}
+\newtheorem{algorithm}[theorem]{Algorithm}
+\newtheorem{axiom}{Axiom}
+\newtheorem{case}[theorem]{Case}
+\newtheorem{claim}[theorem]{Claim}
+\newtheorem{conclusion}[theorem]{Conclusion}
+\newtheorem{condition}[theorem]{Condition}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{criterion}[theorem]{Criterion}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{exercise}[theorem]{Exercise}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{notation}[theorem]{Notation}
+\newtheorem{problem}[theorem]{Problem}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{solution}[theorem]{Solution}
+\newtheorem{summary}[theorem]{Summary}
+\newenvironment{proof}[1][Proof]{\textbf{#1.} }{\ \rule{0.5em}{0.5em}}
+
+\usepackage{mathtools}
+
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\Z}{\mathbb{Z}}
+
+\begin{document}
+
+\title{MATH2050A Homework 8}
+\author{ZHENG Weijia William, 1155124322}
+\date{\today}
+\maketitle
+
+
+\section{Q2 P148}
+
+(i)
+
+$\forall \epsilon>0,$ let $\delta = \frac{\epsilon}{2}$. Note that $$|f(x_1)-f(x_2)|=|\frac{1}{x_1^2}-\frac{1}{x_2^2}|=|x_1-x_2|\frac{1}{|x_1 x_2|}\frac{|x_1+x_2|}{|x_1 x_2|}\leq|x_1-x_2||\frac{1}{x_1}+\frac{1}{x_2}|\leq 2\delta = \epsilon,$$ 
+
+as $x_1,x_2 \in [1,+\infty)$ and $|x_1-x_2|<\delta.$
+
+Therefore, $f(x)=\frac{1}{x^2}$ is uniformly continuous on $[1,+\infty)$.
+
+~\
+
+(ii)
+
+Note that $\forall x_1,x_2 \in [1,+\infty),$ $$|f(x_1)-f(x_2)|=|x_1-x_2|\frac{1}{|x_1 x_2|}\frac{|x_1+x_2|}{|x_1 x_2|}.$$
+
+Note that if $x_1 = \frac{1}{n}, x_2=\frac{1}{1+n},n=1,2,3...$ This implies $$|f(x_1)-f(x_2)|=2n+1 \geq 1, \forall n.$$ 
+
+Choose $\epsilon = 1, \forall \delta >0, \exists N~s.t.~\frac{1}{N}<\delta.$ 
+Choose $x_1=\frac{1}{N}, x_2=\frac{1}{N+1}.$ Then note that $|x_1-x_2|=\frac{1}{N}-\frac{1}{N+1}<\frac{1}{N}<\delta.$ And $|f(x_1)-f(x_2)|\geq 1=\epsilon.$ 
+
+Therefore, $f(x)$ is not uniformly continuous on $[0,+\infty).$
+
+
+\section{Q6 P148}
+Note that both $f(x)$ and $g(x)$ are uniformly continuous on A, then $\forall \epsilon>0, \exists \delta=\delta(\epsilon)>0$ s.t. $|f(x_1)-f(x_2)|<\epsilon$ and $|g(x_1)-g(x_2)|<\epsilon.$ 
+
+Also as if $f$ and $g$ are both bounded on A, then $\exists M_1, M_2$ s.t. $|f(x)|<M_1$ and $|g(x)|<M_2$, $\forall x \in A.$
+
+Then, note that $\forall \epsilon >0,$ $$|f(x_1)g(x_1)-f(x_2)g(x_2)|=|f(x_1)[g(x_1)-g(x_2)]+[f(x_1)-f(x_2)]g(x_2)|$$ $<|f(x_1)[g(x_1)-g(x_2)]|+|[f(x_1)-f(x_2)]g(x_2)|<(M_1+ M_2)\epsilon.$ $\forall x_1,x_2 \in A.$  
+
+Therefore,  if $f,g$ are bounded on A, then the product $fg$ is uniformly continuous on A.
+
+~\
+
+\section{Q7 P148}
+
+(i)
+
+As given $f(x)=x$ and $g(x)=\sin{x}.$ 
+
+Note that $\forall \epsilon>0,$ take $\delta = \epsilon,$ we have $|f(x_1)-f(x_2)|=|x_1-x_2|<\epsilon,$ as $|x_1-x_2|<\delta.$ Therefore, $f(x)$ is uniformly continuous on $\mathbb{R}.$
+
+Note that $\forall \epsilon>0,$ take $\delta =\epsilon ,$ we have $$|g(x_1)-g(x_2)|=|\sin{x_1}-\sin{x_2}|=|2\cos{\frac{x_1+x_2}{2}}\sin{\frac{x_1-x_2}{2}}|<|x_1-x_2|<\delta=\epsilon.$$ 
+as $|x_1-x_2|<\delta.$ Therefore, $g(x)=\sin{x}$ is uniformly continuous on $\mathbb{R}.$
+
+
+~\ 
+
+(ii)
+
+Let $h(x)=f(x)g(x)=x\sin{x}.$ Note that $\forall \epsilon>0, \forall x_1,x_2 \in \mathbb{R}, |h(x_1)-h(x_2)|=|x_1\sin{x_1} - x_2\sin{x_2}|.$ Note that if $x_1=2n\pi +\frac{1}{n}, x_2=2n\pi, n = 1,2,3...$, then $$|h(x_1)-h(x_2)|=|(2n\pi +\frac{1}{n})\sin{\frac{1}{n}}|\geq |2n\pi \sin{\frac{1}{n}}|.$$ 
+
+According to the inequality $$\frac{\sin{x}}x{}>\frac{\pi}{2}~, x\in (-\frac{\pi}{2},\frac{\pi}{2}).$$ 
+
+Now we fix $\epsilon = 4.$
+
+We know that (by Archimedean's property) $\exists N~s.t. \frac{1}{N}<\frac{2}{\pi}$ and $\frac{1}{N}<\delta, \forall \delta>0.$ Choose $x_1 = 2N\pi +\frac{1}{N}, x_2 = 2N\pi$ we have $$|h(x_1)-h(x_2)|\geq 2\pi \frac{2}{\pi}=4=\epsilon.$$
+
+Therefore $h(x)=f(x)g(x)$ is not uniformly continuous on $\mathbb{R}.$
+
+
+
+
+
+\end{document}
